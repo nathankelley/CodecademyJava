@@ -1,0 +1,19 @@
+public class Magic {
+	public static void main(String[] args) {
+
+		// this program will do magical math!
+    // no matter the original, the result is the same!
+
+    /* change this number to be whatever you'd like; the result will remain the same */
+    int myNumber = 9;
+
+    int magicNumber = myNumber * myNumber;
+    magicNumber += myNumber;
+    magicNumber /= myNumber;
+    magicNumber += 17;
+    magicNumber -= myNumber;
+    magicNumber /= 6;
+
+    System.out.println(magicNumber);
+	}
+}
