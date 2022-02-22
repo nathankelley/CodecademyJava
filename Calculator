@@ -1,0 +1,57 @@
+// This program is a simple calculator program. Each method is clearly labeled in order to know what it does. 
+
+public class Calculator{
+
+  public Calculator(){}
+
+  // addition methods
+  public int add( int a, int b ){
+    return a + b;
+  }
+  public double add( double a, double b ){
+    return a + b;
+  }
+
+  // subtraction methods
+  public int subtract( int a, int b ){
+    return a - b;
+  }
+  public double subtract( double a, double b ){
+    return a - b;
+  }
+
+  // multiply methods
+  public int multiply( int a, int b ){
+    return a * b;
+    }
+  public double multiply( double a, double b ){
+    return a * b;
+    }
+
+  // divide methods
+  public int divide( int a, int b ){
+    return a / b;
+    }
+  public double divide( double a, double b ){
+    return a / b;
+    }
+
+  // modulo methods
+  public int modulo( int a, int b ){
+    return a % b;
+    }
+  public double modulo( double a, double b ){
+    return a % b;
+    }
+
+
+  public static void main(String[] args){
+    // calculator instance
+    Calculator myCalculator = new Calculator();
+    System.out.println("Hello world! This is a simple calculator. Please change the code in the print statements if you want to try it out.");
+    System.out.println();
+    System.out.println("Current output: ");
+    System.out.println(myCalculator.add(5, 7));
+    System.out.println(myCalculator.subtract(45, 11));
+  }
+}
