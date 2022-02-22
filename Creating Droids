@@ -1,0 +1,66 @@
+// This program will create a droid that performs a task and has a changing battery level. Robots can transfer energy between them as well. This was a really fun one to code!
+
+public class Droid{
+
+  private String droidName;
+  private int batteryLevel;
+
+  public Droid(String droidName){
+    this.droidName = droidName;
+    this.batteryLevel = 100;
+  }
+
+  // Droid performs a task
+  public void performTask(String task){
+    System.out.println(this.droidName + " is performing this task: " + task);
+    this.batteryLevel -= 10;
+  }
+
+  // Droid states its battery level
+  public void batteryLevel(){
+    System.out.println(this.droidName + "'s battery level is " + this.batteryLevel);
+  }
+
+  // transfer energy
+  public void energyTransfer(int energy){
+    // variable to determine if energy would exceed 100
+    int tempLevel = energy + this.batteryLevel;
+    if (energy >= 0 && this.batteryLevel < 100){
+      this.batteryLevel += energy;
+    } else if (tempLevel > 100){
+      System.out.println("Battery level cannot exceed 100");
+    } else {
+      this.batteryLevel -= Math.abs(energy);
+    }
+
+    // output current battery level
+    System.out.println(this.droidName + "'s energy level: " + batteryLevel);
+  }
+
+  // droid toString method
+  public String toString(){
+    return "Hello, I'm the droid " + this.droidName + "!";
+  }
+
+  public static void main(String[] args){
+    // Droid 1
+    Droid droid1 = new Droid("Cody");
+    System.out.println(droid1);
+    droid1.performTask("walk");
+    droid1.batteryLevel();
+    droid1.performTask("pickup box");
+    droid1.batteryLevel();
+    System.out.println();
+
+    // Droid 2
+    Droid droid2 = new Droid("Mark");
+    System.out.println(droid2);
+    droid2.batteryLevel();
+
+    // transfer energy
+    System.out.println();
+    System.out.println("Energy Transfer: 10");
+    droid1.energyTransfer(10);
+    droid2.energyTransfer(-10);
+  }
+}
