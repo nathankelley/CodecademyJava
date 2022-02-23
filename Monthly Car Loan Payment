@@ -1,0 +1,25 @@
+// This program is a simple car loan program. It will calculate what a monthly payment is based on inputs to the formula. My goal is to add user input so that this can be changed without accessing the code. 
+
+public class CarLoan {
+	public static void main(String[] args) {
+
+	int carLoan = 10000;
+  int loanLength = 3 * 12;
+  int interestRate = 5;
+  int downPayment = 2000;
+  
+  // first handle exceptions, then do the formula
+  if (loanLength <= 0 || interestRate <= 0){
+    System.out.println("Not valid loan information.");
+  } else if (downPayment >= carLoan){
+    System.out.println("Full payment requires nothing down.");
+  } else {
+    int monthlyBalance = (carLoan - downPayment) / loanLength;
+    int monthlyPayment = monthlyBalance + ((monthlyBalance * interestRate) / 100);
+    
+    // output monthly payment
+    System.out.println(monthlyPayment);
+  }
+
+	}
+}
