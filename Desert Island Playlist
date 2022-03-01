@@ -1,0 +1,51 @@
+// this is a program that will print a short list of my favorite songs from an array list. I'm practicing using different array list methods. 
+
+import java.util.ArrayList;
+
+class Playlist{
+
+  public static void reverseListOrder(ArrayList<String> songs){
+    for (String song : songs){
+      String min = songs.get(0);
+      String max = songs.get(songs.size()-1);
+      String tempMin = min;
+
+      // swap songs
+      min = max;
+      max = tempMin;
+    }
+    System.out.println(songs);
+  }
+
+  public static void main(String[] args){
+    // Array list of songs
+    ArrayList<String> desertIslandPlaylist = new ArrayList<String>();
+    desertIslandPlaylist.add("Rocket Man");
+    desertIslandPlaylist.add("Benny and the Jets");
+    desertIslandPlaylist.add("Hotel California");
+    desertIslandPlaylist.add("Vienna");
+    desertIslandPlaylist.add("Piano Man");
+    desertIslandPlaylist.add("Remember Me");
+
+    System.out.println(desertIslandPlaylist);
+
+    // uh oh! You can't have that many! First check the size:
+    System.out.println(desertIslandPlaylist.size()); 
+
+    // remove till there's only 5 songs, check the size
+    desertIslandPlaylist.remove("Remember Me");
+    System.out.println(desertIslandPlaylist.size());
+    System.out.println();
+
+    // want to change the order of the songs?
+    int a = desertIslandPlaylist.indexOf("Vienna");
+    int b = desertIslandPlaylist.indexOf("Piano Man");
+    String tempA = "Vienna";
+    desertIslandPlaylist.set(a, "Piano Man");
+    desertIslandPlaylist.set(b, tempA);
+    System.out.println(desertIslandPlaylist);
+
+    // reverse list values
+    reverseListOrder(desertIslandPlaylist);
+    }
+}
