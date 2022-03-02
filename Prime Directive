@@ -1,0 +1,56 @@
+// This program will determine if numbers in an array are prime or not.
+
+// Other ideas I've been given to improve or do cool things with this program:
+// Build a method that filters an array for odd or even numbers (bonus points if it can do either depending on arguments passed in!).
+// Build a method that returns an ArrayList of the first n primes in an array.
+// Build a method that returns an ArrayList of the first n Fibonacci numbers.
+
+
+// Import statement:
+import java.util.ArrayList;
+
+class PrimeDirective {
+  
+  // Add your methods here:
+
+  // checks for prime numbers
+  public static boolean isPrime(int number){
+    if (number == 2){
+      return true;
+    } else if (number < 2){
+      return false;
+    }
+
+    for (int i = 2; i < number; i++){
+      if (number % i == 0){
+      return false;
+      }
+    }
+    return true;  
+  }
+
+  // holds only prime numbers
+  public ArrayList<Integer> onlyPrimes(int[] numbers){
+    ArrayList<Integer> primes = new ArrayList<Integer>();
+    
+    for (int number : numbers){
+      if (isPrime(number)){
+        primes.add(number);
+      }
+    }
+    for (int prime : primes){
+      System.out.print(prime + ",");
+    }
+    System.out.println();
+    return primes;
+  }
+  
+  public static void main(String[] args) {
+
+    PrimeDirective pd = new PrimeDirective();
+    int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+
+    pd.onlyPrimes(numbers);
+  }  
+
+}
