@@ -1,0 +1,54 @@
+/* This program will check to see if the given DNA strand is a protein or not a protein. My plan is to create two methods, 
+one that checks that the given string is divisible by 3, and the other to check substrings of the string (namely the first three characters 
+and last three characters) to see that they match correct DNA sequencing.
+*/
+
+// IN PROGRESS
+
+class DNA{
+
+  // method for checking the length of the dna strand
+  public static boolean checkLength(String dna){
+    // create integer counter for string length, check % 3 = 0
+    int i = 0;
+    while (i < dna.length()){
+      i++;
+    }
+    if (i % 3 == 0){
+      return true;
+    }
+    return false;
+  }
+
+  // method for checking that the first and last 3 chars are right
+  public static boolean checkSubstring(String dna){
+    // use substring method to check string
+    // first get last three characters
+
+    if (dna.substring(0,3) == "ATG" &&
+        dna.substring(dna.length()-3, dna.length()) == "TGA"){
+          return true;
+    } 
+    return false;
+  }
+
+  public static void main(String[] args){
+
+    //  -. .-.   .-. .-.   .
+    //    \   \ /   \   \ / 
+    //   / \   \   / \   \  
+    //  ~   `-~ `-`   `-~ `-
+
+    String dna1 = "ATGCGATACGCTTGA";
+    String dna2 = "ATGCGATACGTGA";
+    String dna3 = "ATTAATATGTACTGA";
+
+    String dna = dna1;
+
+    // check length
+    System.out.println(checkLength(dna1));
+    System.out.println(checkSubstring(dna1));
+    //System.out.println(dna1.substring(0,3));
+    //System.out.println(dna1.substring(dna1.length()-3, dna1.length()));
+  }
+}
